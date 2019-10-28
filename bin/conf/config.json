@@ -1,0 +1,30 @@
+{
+    "listen_port":8001,
+    "mail_server":"smtp.mail.xxx.com",
+    "mail_port":52,
+    "sender_account":"test@mail.xxx.com",
+    "sender_password":"xxx",
+	"environment":"production",
+	"log_server_ip":"127.0.0.1",
+	"log_server_port":8002,
+    "receiver_infos":[
+		{
+			"type":"test1",
+			"list":[
+				"xxx@mail.xxx.com"
+			]
+		},
+		{
+			"type":"test2",
+			"list":[
+				"xxx@mail.xxx.com"
+			]
+		},
+		{
+			"type":"healthCheck",
+			"list":[
+				"xxx@mail.xxx.com"
+			]
+		}
+	]
+}
