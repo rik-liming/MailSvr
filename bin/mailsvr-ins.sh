@@ -40,8 +40,15 @@ start() {
 		exit
 	fi
 
-	nohup ./${app} >/dev/null 2>&1 & echo $! > pidfile.txt
-	echo "start succ. "
+	nohup ./${app} > error.log 2>&1 & echo $! > pidfile.txt
+	#need to sleep, in order to wait for io task finish
+    sleep 0.1 
+
+    if [ -s error.log ]; then
+        echo "something is wrong, please check! detail in error.log..."
+    else
+        echo "start succ."
+    fi
 }
 
 stop() {
